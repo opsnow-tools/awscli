@@ -99,29 +99,23 @@ _latest() {
 
     printf "${VERSION}" > ${SHELL_DIR}/LATEST
     printf "${VERSION}" > ${SHELL_DIR}/target/publish/${REPONAME}
-    _result "latest complete"
 }
 
 _updated() {
-    if [ "${NEW}" == "" ] || [ "${NEW}" == "${NOW}" ]; then
-        _error "_updated ${NOW} == ${NEW}"
-    fi
+    # if [ "${NEW}" == "" ] || [ "${NEW}" == "${NOW}" ]; then
+    #     _error "_updated ${NOW} == ${NEW}"
+    # fi
 
     VERSION="${NEW}"
 
-    _result "jjjj_updated ${VERSION}"
-
-    echo "111"
-    _result "1111"
+    _result "updated ${VERSION}"
 
     printf "${VERSION}" > ${SHELL_DIR}/VERSION
     printf "${VERSION}" > ${SHELL_DIR}/target/commit_message
-    echo "222"
 
     _replace "s/ENV VERSION .*/ENV VERSION ${VERSION}/g" ${SHELL_DIR}/Dockerfile
     _replace "s/ENV VERSION .*/ENV VERSION ${VERSION}/g" ${SHELL_DIR}/README.md
 
-    echo "333"
     cat <<EOF > ${SHELL_DIR}/target/slack_message.json
 {
     "username": "${USERNAME}",
@@ -134,8 +128,6 @@ _updated() {
     }]
 }
 EOF
-
-    _result "update complete"
 }
 
 ################################################################################
