@@ -5,7 +5,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: opsnowtools/builder:v0.5.7
+      - image: circleci/python
     steps:
       - checkout
       - run:
