@@ -163,6 +163,9 @@ _publish() {
         return
     fi
 
+    echo "BRANCH : ${BRANCH}"
+    echo "PUBLISH_PATH : ${PUBLISH_PATH}"
+    echo "RUN_PATH : ${RUN_PATH}"
     BUCKET="$(echo "${PUBLISH_PATH}" | cut -d'/' -f1)"
 
     # aws s3 sync
