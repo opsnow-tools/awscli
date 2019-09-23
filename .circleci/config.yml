@@ -52,6 +52,17 @@ jobs:
           name: Release
           command: |
             bash ./target/builder.sh release
+  docker:
+    docker:
+      - image: circleci/python
+    working_directory: ~/works
+    steps:
+      - attach_workspace:
+          at: ~/works
+      - run:
+          name: Docker
+          command: |
+            bash ./target/builder.sh docker
   slack:
     docker:
       - image: circleci/python
