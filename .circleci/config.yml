@@ -75,6 +75,9 @@ workflows:
       - release:
           requires:
             - package
+      - docker:
+          requires:
+            - release
       - slack:
           requires:
             - release
