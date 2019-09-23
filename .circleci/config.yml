@@ -79,6 +79,7 @@ workflows:
   version: 2
   apply:
     jobs:
+      - build
       - package
       - publish:
           requires:
