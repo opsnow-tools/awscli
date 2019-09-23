@@ -32,7 +32,7 @@ jobs:
             - target
   publish:
     docker:
-      - image: opsnowtools/awscli
+      - image: circleci/python
     working_directory: ~/works
     steps:
       - attach_workspace:
