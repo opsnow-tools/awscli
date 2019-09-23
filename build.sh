@@ -111,12 +111,16 @@ _updated() {
 
     _result "_updated ${VERSION}"
 
+    echo "111"
+
     printf "${VERSION}" > ${SHELL_DIR}/VERSION
     printf "${VERSION}" > ${SHELL_DIR}/target/commit_message
+    echo "222"
 
     _replace "s/ENV VERSION .*/ENV VERSION ${VERSION}/g" ${SHELL_DIR}/Dockerfile
     _replace "s/ENV VERSION .*/ENV VERSION ${VERSION}/g" ${SHELL_DIR}/README.md
 
+    echo "333"
     cat <<EOF > ${SHELL_DIR}/target/slack_message.json
 {
     "username": "${USERNAME}",
