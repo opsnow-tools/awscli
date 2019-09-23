@@ -57,10 +57,11 @@ jobs:
       - image: circleci/python
     working_directory: ~/works
     steps:
+      - checkout
       - attach_workspace:
           at: ~/works
-      - setup_remote_docker:
-          docker_layer_caching: true
+      # - setup_remote_docker:
+      #     docker_layer_caching: true
       - run:
           name: Docker
           command: |
