@@ -22,8 +22,10 @@ jobs:
           name: Package
           command: |
             mkdir target
-            curl -sLo target/builder.sh toast.sh/builder
+            cp ./builder.sh target/builder.sh
             bash ./target/builder.sh package
+#            curl -sLo target/builder.sh toast.sh/builder
+#            bash ./target/builder.sh package
       - persist_to_workspace:
           root: ~/works
           paths:
