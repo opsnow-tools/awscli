@@ -5,7 +5,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: opspresso/builder:v0.5.7
+      - image: opsnowtools/builder:v0.5.7
     steps:
       - checkout
       - run:
@@ -32,7 +32,7 @@ jobs:
             - target
   publish:
     docker:
-      - image: opspresso/awscli
+      - image: opsnowtools/awscli
     working_directory: ~/works
     steps:
       - attach_workspace:
