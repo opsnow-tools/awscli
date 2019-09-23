@@ -109,9 +109,10 @@ _updated() {
 
     VERSION="${NEW}"
 
-    _result "_updated ${VERSION}"
+    _result "jjjj_updated ${VERSION}"
 
     echo "111"
+    _result "1111"
 
     printf "${VERSION}" > ${SHELL_DIR}/VERSION
     printf "${VERSION}" > ${SHELL_DIR}/target/commit_message
