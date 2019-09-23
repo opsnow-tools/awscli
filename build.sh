@@ -99,6 +99,7 @@ _latest() {
 
     printf "${VERSION}" > ${SHELL_DIR}/LATEST
     printf "${VERSION}" > ${SHELL_DIR}/target/publish/${REPONAME}
+    _result "latest complete"
 }
 
 _updated() {
@@ -128,6 +129,8 @@ _updated() {
     }]
 }
 EOF
+
+    _result "update complete"
 }
 
 ################################################################################
