@@ -102,9 +102,9 @@ _latest() {
 }
 
 _updated() {
-    # if [ "${NEW}" == "" ] || [ "${NEW}" == "${NOW}" ]; then
-    #     _error "_updated ${NOW} == ${NEW}"
-    # fi
+    if [ "${NEW}" == "" ] || [ "${NEW}" == "${NOW}" ]; then
+        _error "_updated ${NOW} == ${NEW}"
+    fi
 
     VERSION="${NEW}"
 
